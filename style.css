@@ -329,3 +329,57 @@ footer {
         /* Simple hide for now, would ideally have mobile menu */
     }
 }
+
+/* Custom Cursor */
+body {
+    cursor: none;
+    /* Hide default cursor */
+}
+
+a,
+button,
+.card,
+input,
+textarea {
+    cursor: none;
+    /* Ensure it's hidden on interactive elements too */
+}
+
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Hover effect */
+body:hover .cursor-dot,
+body:hover .cursor-outline {
+    opacity: 1;
+}
+
+.cursor-hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(0, 242, 255, 0.1);
+    border-color: transparent;
+}
