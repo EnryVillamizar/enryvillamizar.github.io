@@ -1,91 +1,114 @@
-<html>
-  <head>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <title>Enry's website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./rsc/mStyles.css" />
-  </head>
-  <body class="mb-4">
-    <header class="container-fluid m-0 p-0">
-      <nav
-        class="navbar bg-light navbar-expand-sm sticky-top border-bottom border-secondary"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"
-            ><img
-              src="./rsc/wolf-icon.png"
-              alt="Bootstrap"
-              width="30"
-              height="24"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Instagram</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">YouTube</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="container-fluid">
-      <div class="card text-bg-dark mt-4 rounded-2">
-        <img src="./rsc/mrevilcodesig.png" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">MrEvilCodes</h5>
-          <p class="card-text">
-            This is my Instagram account where I post all sort of knowledge
-            about coding. For me coding is my job and my hobbie as well.
-          </p>
-          <a
-            href="https://www.instagram.com/mrevilcodes/"
-            class="btn btn-primary"
-            >Check it out</a
-          >
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enry Villamizar | Software Developer</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="highlight">&lt;</span>EnryV<span class="highlight">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero fade-in-section" id="home">
+    <div class="container hero-content">
+      <p class="overline">Hello, I'm</p>
+      <h1>Enry Villamizar</h1>
+      <h2 class="subtitle">I build things for the <span class="highlight">web</span> & <span
+          class="highlight">mobile</span>.</h2>
+      <p class="bio">
+        Software Developer passionate about creating elegant code and polished user experiences.
+        Creator of <b>MrEvilCodes</b> on Instagram and YouTube.
+      </p>
+      <div class="cta-group">
+        <a href="#work" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About/Socials Section based on previous content -->
+    <section id="about" class="about fade-in-section">
+      <div class="container">
+        <h2 class="section-title"><span class="highlight">01.</span> Content Creation</h2>
+        <div class="cards-grid">
+          <!-- Instagram Card -->
+          <article class="card">
+            <div class="card-image">
+              <img src="./rsc/mrevilcodesig.png" alt="MrEvilCodes Instagram">
+            </div>
+            <div class="card-content">
+              <h3>MrEvilCodes IG</h3>
+              <p>My Instagram account where I post knowledge about coding. Coding is my job and my hobby.</p>
+              <a href="https://www.instagram.com/mrevilcodes/" target="_blank" class="text-link">Check it out &rarr;</a>
+            </div>
+          </article>
+
+          <!-- YouTube Card -->
+          <article class="card">
+            <div class="card-image">
+              <img src="./rsc/mrevilcodesyt.png" alt="MrEvilCodes YouTube">
+            </div>
+            <div class="card-content">
+              <h3>MrEvilCodes YouTube</h3>
+              <p>Tutorials on Kotlin libraries, Android Apps, and more. Teaching the next generation of devs.</p>
+              <a href="https://www.youtube.com/@mrevilcodes/" target="_blank" class="text-link">Watch Videos &rarr;</a>
+            </div>
+          </article>
         </div>
       </div>
-      <div class="card mt-4 rounded-2">
-        <img src="./rsc/mrevilcodesyt.png" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">MrEvilCodes YouTube Channel</h5>
-          <p class="card-text">
-            Along with an Instagram account. I also create and post content on
-            YT. This channel is oriented to teach people how to use Kotlin
-            libraries, writing Android Apps.
-          </p>
-          <a
-            href="https://www.youtube.com/@mrevilcodes/"
-            class="btn btn-primary"
-            >Check it out</a
-          >
-        </div>
+    </section>
+
+    <!-- Work Section (Placeholder for now) -->
+    <section id="work" class="work fade-in-section">
+      <div class="container">
+        <h2 class="section-title"><span class="highlight">02.</span> Selected Work</h2>
+        <p>More projects coming soon...</p>
       </div>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in-section">
+      <div class="container center-text">
+        <h2 class="section-title"><span class="highlight">03.</span> Get In Touch</h2>
+        <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is
+          open!</p>
+        <a href="mailto:enry.v@example.com" class="btn primary big-btn">Say Hello</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Designed & Built by Enry Villamizar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
