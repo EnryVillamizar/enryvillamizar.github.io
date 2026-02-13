@@ -42,16 +42,26 @@ noBtn.addEventListener('click', () => {
 });
 
 function moveNoButton() {
+    // Current scale of the button
+    const currentScale = noScale;
     const padding = 20;
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
-    const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
-    const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+    // Use current dimensions which may change as button shrinks
+    const buttonWidth = noBtn.offsetWidth * currentScale;
+    const buttonHeight = noBtn.offsetHeight * currentScale;
+
+    // Keep it within visual viewport
+    const maxX = window.innerWidth - buttonWidth - padding;
+    const maxY = window.innerHeight - buttonHeight - padding;
+
+    // Ensure we don't get negative ranges if screen is very small or button grows too big
+    const randomX = Math.max(padding, Math.min(maxX, Math.floor(Math.random() * maxX)));
+    const randomY = Math.max(padding, Math.min(maxY, Math.floor(Math.random() * maxY)));
 
     noBtn.style.position = 'fixed';
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
+    noBtn.style.margin = '0'; // Kill any container margins
     noBtn.style.zIndex = '1000';
 }
 
@@ -77,43 +87,32 @@ yesBtn.addEventListener('click', () => {
 });
 
 function startConfetti() {
-    const duration = 15 * 1000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-    function randomInRange(min, max) {
-        return Math.random() * (max - min) + min;
-    }
-
-    // Basic CSS hearts falling as confetti substitute since I can't easily import canvas-confetti
-    for (let i = 0; i < 50; i++) {
+    const heartCount = 50;
+    for (let i = 0; i < heartCount; i++) {
         setTimeout(createHeart, i * 100);
     }
 }
 
 function createHeart() {
     const heart = document.createElement('div');
+    heart.className = 'falling-heart';
     heart.innerHTML = '❤️';
-    heart.style.position = 'fixed';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.top = '-5vh';
-    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
-    heart.style.zIndex = '999';
-    heart.style.userSelect = 'none';
-    heart.style.pointerEvents = 'none';
 
-    const fallDuration = Math.random() * 3 + 2;
-    heart.style.transition = `transform ${fallDuration}s linear, opacity ${fallDuration}s linear`;
+    // Randomize appearance
+    const size = Math.random() * 20 + 20;
+    const left = Math.random() * 100;
+    const duration = Math.random() * 3 + 2;
+    const delay = Math.random() * 2;
+
+    heart.style.fontSize = `${size}px`;
+    heart.style.left = `${left}vw`;
+    heart.style.animationDuration = `${duration}s`;
+    heart.style.animationDelay = `${delay}s`;
 
     document.body.appendChild(heart);
 
-    // Animate falling
-    requestAnimationFrame(() => {
-        heart.style.transform = `translateY(110vh) translateX(${Math.random() * 20 - 10}vw) rotate(${Math.random() * 360}deg)`;
-        heart.style.opacity = '0';
-    });
-
+    // Remove element after animation finishes
     setTimeout(() => {
         heart.remove();
-    }, fallDuration * 1000);
+    }, (duration + delay) * 1000);
 }
